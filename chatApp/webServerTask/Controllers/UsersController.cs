@@ -56,7 +56,7 @@ namespace webServerTask.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,UserName,Nickname,Password")] User user)
+        public async Task<IActionResult> Create([Bind("Id,Username,Nickname,Password,Contacts,Conversations")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +94,7 @@ namespace webServerTask.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,UserName,Nickname,Password")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Username,Nickname,Password,Contacts,Conversations")] User user)
         {
             if (id != user.Id)
             {

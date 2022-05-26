@@ -1,5 +1,7 @@
 ﻿// Uploading an image
 
+const { data } = require("jquery");
+
 const image_input = document.querySelector("#image_input");
 var uploaded_image = "";
 
@@ -13,7 +15,7 @@ image_input.addEventListener("change", function () {
 })
 
 
-// Validations on username and password
+// Validations on Username and password
 
 // Return true if 'user' is already used by another user
 function checkUsername(list, user) {
@@ -34,7 +36,7 @@ function validateForm() {
 
     console.log(contactsList);
 
-    // Checks that the username field is not empty
+    // Checks that the Username field is not empty
     if (name.length == 0) {
         alert("Username can't be empty.");
         // Checks that the nickname field is not empty  
@@ -58,7 +60,7 @@ function validateForm() {
         // Checks that password verification is the same as password
     } else if (password !== confirmPassword) {
         alert("The password does not match.");
-        // Checks that the username is not used by another user
+        // Checks that the Username is not used by another user
     } else if (checkUsername(contactsList, name)) {
         alert("Username already exists.")
         // If the user has registered successfully, 

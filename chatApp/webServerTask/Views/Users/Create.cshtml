@@ -1,5 +1,4 @@
 ﻿@model webServerTask.Models.User
-
 @{
     ViewData["Title"] = "Create";
 }
@@ -12,7 +11,7 @@
 <body>
     <form>
         <label> Username </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="name" name="username" placeholder="Enter your name" size="15" required style="height: 25px"/>
+        <input type="text" id="name" name="Username" placeholder="Enter your name" size="15" required style="height: 25px"/>
         <p>
             <label>Display name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="text" id="nickname" name="displayname" placeholder="Enter nickname" size="15" required style="height: 25px"/>
@@ -28,7 +27,6 @@
             <label>Upload a photo (optional)</label>&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="file" id="image_input" accept="images/*">
             <div id="display_image"></div>
-            <!-- <script src="register.js"></script> -->
         <p>
             <input type="button" onclick="validateForm()" value="Register" style="font-size: 20px; height: 35px">
             Already registered? <a href="login.html"> Click here </a> to login

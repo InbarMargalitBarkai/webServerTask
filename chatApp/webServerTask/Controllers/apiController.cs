@@ -1,24 +1,40 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using webServerTask.Data;
+using webServerTask.Models;
 
 namespace webServerTask.Controllers
 {
     public class apiController : Controller
     {
+
+        private readonly webServerTaskContext _context;
+        public apiController(webServerTaskContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
         }
 
-        // GET: api/invitations
+        // GET: api/contacts
+        // return the contacts user
         public IActionResult contacts()
         {
             return View();
         }
 
-        // Post: api/invitations
-        public async Task<IActionResult> contacts()
+        // Post: api/contacts
+        public async Task<IActionResult> contacts(User? user)
         {
-            return View();
+            var u = await _context.User.FirstOrDefaultAsync(e => e.Id == user.Id);
+            if (u == null)
+            {
+                return NotFound();
+            }
+            return View(u.Contacts);
         }
 
         // POST: api/invitations

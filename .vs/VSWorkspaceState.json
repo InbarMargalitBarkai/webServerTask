@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\chatApp",
+    "\\chatApp\\webServerTask",
+    "\\chatApp\\webServerTask\\Controllers",
+    "\\chatApp\\webServerTask\\Models",
+    "\\chatApp\\webServerTask\\Views",
+    "\\chatApp\\webServerTask\\Views\\Home",
+    "\\chatApp\\webServerTask\\Views\\Login"
+  ],
+  "SelectedNode": "\\chatApp\\webServerTask\\Models\\User.cs",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,5 +1,36 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model webServerTask.Models.Contact
+
+    public class ItemModel
+    {
+        // Add Item
+        public void addItem(Item item)
+        {
+            using (var db = new ItemsContext())
+            {
+                db.Add(item);
+                db.SaveChanges();
+            }
+        }
+
+        // Get Item
+        public Item? getItem(string itemName)
+        {
+            using (var db = new ItemsContext())
+            {
+                Item? item = db.Items.Find(itemName);
+                return item;
+            }
+        }
+
+        // Get all Items
+        public List<Item> getAllItems()
+        {
+            using (var db = new ItemsContext())
+            {
+                var items = db.Items.ToList();
+                return items;
+            }
+        }
+
+    }
 }

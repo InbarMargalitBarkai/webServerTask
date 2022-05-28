@@ -7,14 +7,13 @@ namespace webServerTask.Controllers
 {
     public class apiController : Controller
     {
-
         private readonly webServerTaskContext _context;
         public apiController(webServerTaskContext context)
         {
             _context = context;
         }
 
-        public IActionResult Index()
+    public IActionResult Index()
         {
             return View();
         }
@@ -50,3 +49,4 @@ namespace webServerTask.Controllers
         }
     }
 }
+

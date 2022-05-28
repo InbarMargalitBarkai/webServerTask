@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@model webServerTask.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,12 +16,20 @@
 <body>
     <form>
         <div class="container">
-            <label>Username</label>
-            <input type="text" id="name" placeholder="Enter Username" name="Username" required style="height: 25px">
+               <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" id="name" placeholder="Enter Username"/>
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
             <p>
-            <label>Password</label>&nbsp;
-            <input type="password" id="password" placeholder="Enter Password" name="password" required style="height: 25px">
+
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input type="password" id="password" placeholder="Enter Password" asp-for="Password" class="form-control"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
             <p>
+                <p>
                     <input type="button" onclick="validateLogin()" value="Login" style="font-size: 20px; height: 35px; width: 75px">
                     Not registered? <a asp-action="Create">Click here</a> to register
                   
@@ -22,6 +37,10 @@
 </form>
     <script src="~/js/Login.js" asp-append-version="true"></script>
     <script src="~/js/AllUsers.js" asp-append-version="true"></script>
-    <script src="~/js/Register.js" asp-append-version="true"></script>
+    <script src="~/js/Create.js" asp-append-version="true"></script>
 </body>
 </html> 
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

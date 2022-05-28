@@ -8,41 +8,129 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = webServerTask
 build_property.RootNamespace = webServerTask
-build_property.ProjectDir = C:\Users\moria\OneDrive\שולחן העבודה\Projects\Advanced Programming 2\webServerTask\chatApp\webServerTask\
+build_property.ProjectDir = C:\Users\inbar\OneDrive\שולחן העבודה\courses\third year\advancedProgramming2\webServerTask\webServerTask\chatApp\webServerTask\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\moria\OneDrive\שולחן העבודה\Projects\Advanced Programming 2\webServerTask\chatApp\webServerTask
+build_property.MSBuildProjectDirectory = C:\Users\inbar\OneDrive\שולחן העבודה\courses\third year\advancedProgramming2\webServerTask\webServerTask\chatApp\webServerTask
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/moria/OneDrive/שולחן העבודה/Projects/Advanced Programming 2/webServerTask/chatApp/webServerTask/Views/Home/Index.cshtml]
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/api/contacts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcYXBpXGNvbnRhY3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/api/invitations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcYXBpXGludml0YXRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/api/transfer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcYXBpXHRyYW5zZmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Contacts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Contacts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Contacts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Contacts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Contacts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Conversations/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVyc2F0aW9uc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Conversations/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVyc2F0aW9uc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Conversations/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVyc2F0aW9uc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Conversations/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVyc2F0aW9uc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Conversations/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udmVyc2F0aW9uc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moria/OneDrive/שולחן העבודה/Projects/Advanced Programming 2/webServerTask/chatApp/webServerTask/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Messages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moria/OneDrive/שולחן העבודה/Projects/Advanced Programming 2/webServerTask/chatApp/webServerTask/Views/Login/l.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cbC5jc2h0bWw=
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Messages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moria/OneDrive/שולחן העבודה/Projects/Advanced Programming 2/webServerTask/chatApp/webServerTask/Views/Shared/Error.cshtml]
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Messages/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Messages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Messages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVzc2FnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moria/OneDrive/שולחן העבודה/Projects/Advanced Programming 2/webServerTask/chatApp/webServerTask/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moria/OneDrive/שולחן העבודה/Projects/Advanced Programming 2/webServerTask/chatApp/webServerTask/Views/_ViewImports.cshtml]
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Users/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Users/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moria/OneDrive/שולחן העבודה/Projects/Advanced Programming 2/webServerTask/chatApp/webServerTask/Views/_ViewStart.cshtml]
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/moria/OneDrive/שולחן העבודה/Projects/Advanced Programming 2/webServerTask/chatApp/webServerTask/Views/Shared/_Layout.cshtml]
+[C:/Users/inbar/OneDrive/שולחן העבודה/courses/third year/advancedProgramming2/webServerTask/webServerTask/chatApp/webServerTask/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-80owiren2z

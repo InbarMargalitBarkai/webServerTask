@@ -22,6 +22,37 @@ namespace webServerTask.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("webServerTask.Models.Contact", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ConversationId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nickname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ConversationId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Contact");
+                });
+
             modelBuilder.Entity("webServerTask.Models.Conversation", b =>
                 {
                     b.Property<int>("Id")
@@ -30,12 +61,7 @@ namespace webServerTask.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("LastMessageId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("LastMessageId");
 
                     b.ToTable("Conversation");
                 });
@@ -52,20 +78,19 @@ namespace webServerTask.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ConversationId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("SendingTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("SentById")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SentToId")
-                        .HasColumnType("int");
+                    b.Property<string>("SentBy")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SentById");
-
-                    b.HasIndex("SentToId");
+                    b.HasIndex("ConversationId");
 
                     b.ToTable("Message");
                 });
@@ -95,34 +120,36 @@ namespace webServerTask.Migrations
                     b.ToTable("User");
                 });
 
-            modelBuilder.Entity("webServerTask.Models.Conversation", b =>
+            modelBuilder.Entity("webServerTask.Models.Contact", b =>
                 {
-                    b.HasOne("webServerTask.Models.Message", "LastMessage")
+                    b.HasOne("webServerTask.Models.Conversation", "Conversation")
                         .WithMany()
-                        .HasForeignKey("LastMessageId")
+                        .HasForeignKey("ConversationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("LastMessage");
+                    b.HasOne("webServerTask.Models.User", null)
+                        .WithMany("Contacts")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Conversation");
                 });
 
             modelBuilder.Entity("webServerTask.Models.Message", b =>
                 {
-                    b.HasOne("webServerTask.Models.User", "SentBy")
-                        .WithMany()
-                        .HasForeignKey("SentById")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("webServerTask.Models.Conversation", null)
+                        .WithMany("Messages")
+                        .HasForeignKey("ConversationId");
+                });
 
-                    b.HasOne("webServerTask.Models.User", "SentTo")
-                        .WithMany()
-                        .HasForeignKey("SentToId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+            modelBuilder.Entity("webServerTask.Models.Conversation", b =>
+                {
+                    b.Navigation("Messages");
+                });
 
-                    b.Navigation("SentBy");
-
-                    b.Navigation("SentTo");
+            modelBuilder.Entity("webServerTask.Models.User", b =>
+                {
+                    b.Navigation("Contacts");
                 });
 #pragma warning restore 612, 618
         }

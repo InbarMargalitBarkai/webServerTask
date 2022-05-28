@@ -32,9 +32,7 @@ function validateForm() {
     let nickname = document.getElementById("nickname").value;
     let password = document.getElementById("password").value;
     let confirmPassword = document.getElementById("confirm-password").value;
-    let image = document.getElementById("image_input").value;
-
-    console.log(contactsList);
+    //let image = document.getElementById("image_input").value;
 
     // Checks that the Username field is not empty
     if (name.length == 0) {
@@ -79,13 +77,16 @@ function validateForm() {
                 Password: password
             });
         }
-        console.log(contactsList);
         //document.write("Register form has been submitted successfully.");
 
         // adding nickname in the app screen chat
-        localStorage.setItem("name", nickname);
+        //localStorage.setItem("name", nickname);
+        //localStorage.setItem("nickname", nickname);
+        //localStorage.setItem("password", password);
+
+
         // adding photo in the app screen chat
-        localStorage.setItem("photo", uploaded_image);
-        window.location.href = "chatAfterRegister.html";
+        //localStorage.setItem("photo", uploaded_image);
+        window.location.href = "ChatAfterRegister.cshtml";
     }
 }

@@ -6,9 +6,7 @@
     "\\chatApp\\webServerTask\\Controllers",
     "\\chatApp\\webServerTask\\Models",
     "\\chatApp\\webServerTask\\Views",
-    "\\chatApp\\webServerTask\\Views\\Home",
-    "\\chatApp\\webServerTask\\Views\\Login"
+    "\\chatApp\\webServerTask\\Views\\Home"
   ],
-  "SelectedNode": "\\chatApp\\webServerTask\\Models\\User.cs",
   "PreviewInSolutionExplorer": false
 }

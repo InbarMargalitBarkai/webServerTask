@@ -10,12 +10,24 @@ namespace webServerTask.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Conversation",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Conversation", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "User",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Nickname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -30,73 +42,77 @@ namespace webServerTask.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    SentById = table.Column<int>(type: "int", nullable: false),
-                    SentToId = table.Column<int>(type: "int", nullable: false),
+                    SentBy = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SendingTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    SendingTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ConversationId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Message", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Message_User_SentById",
-                        column: x => x.SentById,
-                        principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Message_User_SentToId",
-                        column: x => x.SentToId,
-                        principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        name: "FK_Message_Conversation_ConversationId",
+                        column: x => x.ConversationId,
+                        principalTable: "Conversation",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
-                name: "Conversation",
+                name: "Contact",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    LastMessageId = table.Column<int>(type: "int", nullable: false)
+                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nickname = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ConversationId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Conversation", x => x.Id);
+                    table.PrimaryKey("PK_Contact", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Conversation_Message_LastMessageId",
-                        column: x => x.LastMessageId,
-                        principalTable: "Message",
+                        name: "FK_Contact_Conversation_ConversationId",
+                        column: x => x.ConversationId,
+                        principalTable: "Conversation",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Contact_User_UserId",
+                        column: x => x.UserId,
+                        principalTable: "User",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Conversation_LastMessageId",
-                table: "Conversation",
-                column: "LastMessageId");
+                name: "IX_Contact_ConversationId",
+                table: "Contact",
+                column: "ConversationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Message_SentById",
-                table: "Message",
-                column: "SentById");
+                name: "IX_Contact_UserId",
+                table: "Contact",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Message_SentToId",
+                name: "IX_Message_ConversationId",
                 table: "Message",
-                column: "SentToId");
+                column: "ConversationId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Conversation");
+                name: "Contact");
 
             migrationBuilder.DropTable(
                 name: "Message");
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "Conversation");
         }
     }
 }

@@ -1,40 +1,63 @@
 ﻿@model webServerTask.Models.User
+
 @{
     ViewData["Title"] = "Create";
 }
 
+<!DOCTYPE html>
+<html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Register Page </title>
+    <title> Create user Page </title>
     <link rel="stylesheet" href="~/css/Create.css" asp-append-version="true" />
-</head>
-<body>
-    <form>
-        <label> Username </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" id="name" name="Username" placeholder="Enter your name" size="15" required style="height: 25px"/>
-        <p>
-            <label>Display name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" id="nickname" name="displayname" placeholder="Enter nickname" size="15" required style="height: 25px"/>
-        <p>
-            <label for="password">Password</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="password" id="password" placeholder="Enter password" name="password" style="height: 25px"
-                   pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/"
-                   title="Must contain at least one uppercase or lowercase letter and one digit" required>
-        <p>
-            <label for="confirm-password">Confirm password</label>&nbsp;&nbsp;
-            <input type="password" id="confirm-password" placeholder="Enter password again" name="confirm-password" required style="height: 25px">
-        <p>
-            <label>Upload a photo (optional)</label>&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="file" id="image_input" accept="images/*">
-            <div id="display_image"></div>
-        <p>
-            <input type="button" onclick="validateForm()" value="Register" style="font-size: 20px; height: 35px">
-            Already registered? <a href="login.html"> Click here </a> to login
 
-    </form>
-    <script src="register.js"></script>
-    <script src="allUsers.js"></script>
+</head>
+
+<body>
+<h1>Create</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" id="name" placeholder="Enter your name"/>
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nickname" class="control-label">Display name</label>
+                <input asp-for="Nickname" class="form-control" id="nickname" placeholder="Enter nickname"/>
+                <span asp-validation-for="Nickname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input type="password" asp-for="Password" class="form-control" id="password" placeholder="Enter password"
+                pattern="/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/"
+                 title="Must contain at least one uppercase or lowercase letter and one digit"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <label class="control-label">Confirm password</label>
+                <input type="password" class="form-control" id="confirm-password" placeholder="Enter password again"/>
+                <span class="text-danger"></span>
+            </div>
+            <p>
+            
+                <input type="button" onclick="validateForm()" value="Register" style="font-size: 20px; height: 35px; width: 75px">
+                            Already registered? <a asp-action="Login"> Click here </a> to login
+        </form>
+                    
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+    <script src="~/js/Create.js" asp-append-version="true"></script>
+    <script src="~/js/AllUsers.js" asp-append-version="true"></script>
 </body>
+</html> 
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

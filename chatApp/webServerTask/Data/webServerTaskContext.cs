@@ -19,5 +19,7 @@ namespace webServerTask.Data
         public DbSet<webServerTask.Models.Message>? Message { get; set; }
 
         public DbSet<webServerTask.Models.Conversation>? Conversation { get; set; }
+        public DbSet<webServerTask.Models.Contact>? Contact { get; set; }
+
     }
 }

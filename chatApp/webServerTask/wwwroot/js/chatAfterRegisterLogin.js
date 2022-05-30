@@ -1,19 +1,16 @@
 ﻿// this is for the user details
 
 
-// display image
-var bannerImg = document.getElementById("image");
-if (bannerImg) {
-    var image = document.createElement("img");
-    image.id = "image";
-    image.src = localStorage.getItem("photo");
-    bannerImg.appendChild(image);
+// display nickname in chat after register
+var div1 = document.getElementById("userNickname");
+if (div1) {
+    div1.innerHTML = '&nbsp;&nbsp;' + localStorage.getItem("nickname");
 }
 
-// display nickname
-var div = document.getElementById("user");
-if (div) {
-    div.innerHTML = localStorage.getItem("name");
+
+var div2 = document.getElementById("user");
+if (div2) {
+    div2.innerHTML = '&nbsp;&nbsp;' + localStorage.getItem("nick");
 }
 
 

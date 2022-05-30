@@ -25,13 +25,11 @@
                     //document.write("Login successfully");
                     //break; 
                     var nickname = "";
-                    var uploaded_image;
                     event.preventDefault();
                     // take the user details to create his photo and nickname
                     for (let c of contactsList) {
                         if (c.Username === name) {
                             nickname = c.Nickname;
-                            uploaded_image = c.photoUrl;
                         }
                     }
 
@@ -39,12 +37,9 @@
                     localStorage.setItem("n", name);
 
                     // adding nickname in the app screen chat
-                    localStorage.setItem("name", nickname);
-                    // adding photo in the app screen chat
-                    localStorage.setItem("photo", uploaded_image);
+                    localStorage.setItem("nick", nickname);
 
-                    /* localStorage.setItem("name", name);*/
-                    window.location.href = "chatAfterLoginNew.html";
+                    window.location.href = "ChatAfterLogin";
                 }
             }
         }

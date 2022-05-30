@@ -1,0 +1,90 @@
+﻿@model webServerTask.Models.User
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- those two are for the send button -->
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
+    
+    <link rel="stylesheet" href="~/css/popupAddIdentifier.css" asp-append-version="true" />
+     <link rel="stylesheet" href="~/css/userChatList.css" asp-append-version="true" />
+     <link rel="stylesheet" href="~/css/messages.css" asp-append-version="true" />
+
+    <style class="cp-pen-styles"></style>
+
+     <link href="Login.cshtml" rel="import " />
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
+    <title>ChatApp</title>
+</head>
+<body>
+    <div id="frame" style="flex-direction: row">
+        <div id="sidepanel">
+            <div class="ex1">
+                <div id="contacts">
+                            <div class="wrap">
+                                <div id="contacts-list" style="width: 330px;">
+                                    <h2>
+                                        <name id="user"></name>
+                                        <icon>
+                                            <a href="#divOne" class="btn btn-link" style="color: black"><span class="bi bi-person-plus"></span></a>
+                                        </icon>
+                                    </h2>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id="showAfterClickContact" style="display: none">
+            <div class="contact-profile">
+                <nic id="contactNickname"></nic>
+            </div>
+            <div class="messages">
+                <ul>
+                </ul>
+            </div>
+            <div class="message-input">
+                <div class="wrap">
+                    
+                    <input type="text" placeholder="Write your message..." />
+                    <button class="submit">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--adding user popup window-->
+    <div class="overlay" id="divOne">
+        <div class="wrapper">
+            <h2>Add new contact</h2><a class="close" href="#">&times;</a>
+            <div class="content">
+                <div class="container">
+                    <form>
+                        <input id="addContact" placeholder="Contact's identifier" type="text">
+                        <input type="submit" value="Add" onclick="addIdentifier()">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    <!-- <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script> -->
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    
+     <script src="~/js/chatAfterRegisterLogin.js" asp-append-version="true"></script>
+     <script src="~/js/allUsers.js" asp-append-version="true"></script>
+    <script src="~/js/contacts.js" asp-append-version="true"></script>
+    <script src="~/js/messages.js" asp-append-version="true"></script>
+     <script src="~/js/allUserChat.js" asp-append-version="true"></script>
+</body>
+</html>

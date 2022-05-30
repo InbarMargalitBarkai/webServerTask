@@ -1,8 +1,6 @@
 ﻿// this is for adding new contactuser in the list contatct conversation
 
-
 function addIdentifier() {
-
     var addContact = document.getElementById("addContact").value;
     var userExist = false;
     // Display contacts list on page
@@ -18,13 +16,6 @@ function addIdentifier() {
             const username = contact.Username;
             const nickname = contact.Nickname;
             const password = contact.Password;
-            const photoUrl = contact.photoUrl;
-
-
-            //create img tag to hold contact pic, give it a class name (for styling purposes) and add photo to it
-            const contactPhoto = document.createElement('img');
-            contactPhoto.classList.add('contact-photo');
-            contactPhoto.src = photoUrl;
 
             //create div to hold contact nickname and add name
             const nicknameDiv = document.createElement('div');
@@ -35,7 +26,6 @@ function addIdentifier() {
             const contactContainerDiv = document.createElement('div');
             contactContainerDiv.classList.add('contact-container');
 
-            contactContainerDiv.appendChild(contactPhoto);
             contactContainerDiv.appendChild(nicknameDiv);
 
             contactsWrapper.appendChild(contactContainerDiv);
@@ -45,8 +35,6 @@ function addIdentifier() {
     if (!userExist) {
         alert("user doesn't exist, please try another one.");
     }
-
-
 
     // Listen for clicks on each contact and select the appropriate conversation
     let list = document.getElementsByClassName('contact-container');
@@ -67,28 +55,12 @@ function addIdentifier() {
         // show the div (the messgae chat side) only after there was a click in thhe contact list (choose conversation)
         document.getElementById("showAfterClickContact").style.display = "";
 
-
         let allMessagesSent = '<ul>';
 
         // place the contact nickname in the conversation
         var j = document.getElementById("contactNickname");
         if (j) {
             j.innerHTML = theNickname;
-        }
-        // place the contact photo in the conversation
-        var i = document.getElementById("contactPhoto");
-        if (i) {
-            for (let c of contactsList) {
-                if (c.Nickname === theNickname) {
-                    let thePhoto = c.photoUrl;
-                    var contactP = document.createElement("img");
-                    contactP.id = "contactP";
-                    contactP.src = thePhoto;
-                    // remove the previous contact photo before append the new one
-                    i.innerHTML = '';
-                    i.appendChild(contactP);
-                }
-            }
         }
     }
 }

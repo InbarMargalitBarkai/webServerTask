@@ -9531,24 +9531,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\moria\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\inbar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\moria\\OneDrive\\שולחן העבודה\\Projects\\Advanced Programming 2\\webServerTask\\chatApp\\webServerTask\\webServerTask.csproj",
+      "projectUniqueName": "C:\\Users\\inbar\\OneDrive\\שולחן העבודה\\courses\\third year\\advancedProgramming2\\webServerTask\\webServerTask\\chatApp\\webServerTask\\webServerTask.csproj",
       "projectName": "webServerTask",
-      "projectPath": "C:\\Users\\moria\\OneDrive\\שולחן העבודה\\Projects\\Advanced Programming 2\\webServerTask\\chatApp\\webServerTask\\webServerTask.csproj",
-      "packagesPath": "C:\\Users\\moria\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\moria\\OneDrive\\שולחן העבודה\\Projects\\Advanced Programming 2\\webServerTask\\chatApp\\webServerTask\\obj\\",
+      "projectPath": "C:\\Users\\inbar\\OneDrive\\שולחן העבודה\\courses\\third year\\advancedProgramming2\\webServerTask\\webServerTask\\chatApp\\webServerTask\\webServerTask.csproj",
+      "packagesPath": "C:\\Users\\inbar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\inbar\\OneDrive\\שולחן העבודה\\courses\\third year\\advancedProgramming2\\webServerTask\\webServerTask\\chatApp\\webServerTask\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\moria\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\inbar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

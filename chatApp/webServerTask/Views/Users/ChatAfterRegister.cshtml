@@ -44,9 +44,7 @@
 
                     <div id="contacts-list" style="width: 350px;">
                         <h2>
-                            <!-- adding the userName -->
-                            <photo id="image"></photo>
-                            <name id="user"></name>
+                            <name id="userNickname"></name>
                             <icon>
                                 <a href="#divOne" class="btn btn-link" style="color: black"><span class="bi bi-person-plus"></span></a>
                             </icon>
@@ -59,7 +57,6 @@
 
         <div class="content" id="showAfterClickContact" style="display: none">
             <div class="contact-profile">
-                <pic id="contactPhoto"></pic>
                 <nic id="contactNickname"></nic>
 
             </div>
@@ -69,30 +66,10 @@
             </div>
             <div class="message-input">
                 <div class="wrap">
-
                     <input type="text" placeholder="Write your message..." />
                     <button class="submit">
                         <i class="fa fa-paper-plane" aria-hidden="true"></i>
                     </button>
-                    <!--record-->
-                    <a href="#divTwo" class="btn btn-link" style="color: #32465a"><span class="bi bi-mic-fill"></span></a>
-
-                    <!--picture-->
-                    <a class="btn btn-link" onclick="chooseImage()" style="color: #32465a">
-                        <span class="bi bi-image"></span>
-                        <input type="file" id="imageInput" onchange="sendImage(this);"
-                               accept="images/*" style="display: none;">
-                        <!--<div id="displayImage"></div>-->
-                    </a>
-
-                    <!--video-->
-                    <a class="btn btn-link" onclick="chooseVideo()" style="color: #32465a">
-                        <span class="bi bi-camera-reels-fill"></span>
-                        <input type="file" id="videoInput" onchange="sendVideo(this);"
-                               style="display: none;">
-                        <div id="displayVideo"></div>
-                    </a>
-
                 </div>
             </div>
         </div>
@@ -107,44 +84,6 @@
                     <form>
                         <input id="addContact" placeholder="Contact's identifier" type="text">
                         <input type="submit" value="Add" onclick="addIdentifier()">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--adding popup record window-->
-    <div class="overlay" id="divTwo">
-        <div class="wrapper">
-            <a class="close" href="#">&times;</a>
-            <div class="content">
-                <div class="container">
-                    <form>
-                        <button id="play">RECORD</button>
-                        <button id="pause">STOP</button>
-                        <div id="ok"></div>
-                        <script>
-                            play.onclick = () => {
-                                navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
-                                    mediaRecorder = new MediaRecorder(stream)
-                                    mediaRecorder.start()
-                                    items = []
-                                    mediaRecorder.addEventListener("dataavailable", e => {
-                                        items.push(e.data)
-                                    })
-
-                                    mediaRecorder.addEventListener("stop", e => {
-                                        blob = new Blob(items)
-                                        audioUrl = URL.createObjectURL(blob);
-                                        audio = new Audio(audioUrl);
-                                        audio.setAttribute("controls", 1);
-                                        ok.appendChild(audio);
-                                    })
-                                })
-                            }
-
-                            pause.onclick = () => { mediaRecorder.stop() }
-                        </script>
                     </form>
                 </div>
             </div>

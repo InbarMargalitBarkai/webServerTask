@@ -1,21 +1,4 @@
-﻿// Uploading an image
-
-const { data } = require("jquery");
-
-const image_input = document.querySelector("#image_input");
-var uploaded_image = "";
-
-image_input.addEventListener("change", function () {
-    const reader = new FileReader();
-    reader.addEventListener("load", () => {
-        uploaded_image = reader.result;
-        document.querySelector("#display_image").style.backgroundImage = 'url(' + uploaded_image + ')';
-    });
-    reader.readAsDataURL(this.files[0]);
-})
-
-
-// Validations on Username and password
+﻿// Validations on Username and password
 
 // Return true if 'user' is already used by another user
 function checkUsername(list, user) {
@@ -32,7 +15,6 @@ function validateForm() {
     let nickname = document.getElementById("nickname").value;
     let password = document.getElementById("password").value;
     let confirmPassword = document.getElementById("confirm-password").value;
-    //let image = document.getElementById("image_input").value;
 
     // Checks that the Username field is not empty
     if (name.length == 0) {
@@ -64,29 +46,16 @@ function validateForm() {
         // If the user has registered successfully, 
         // update his details in the contacts list
     } else {
-        // if he uploaded a picture
-        if (image !== null) {
-            contactsList.push({
-                Username: name, Nickname: nickname,
-                Password: password, photoUrl: image
-            });
-            // and if not
-        } else {
             contactsList.push({
                 Username: name, Nickname: nickname,
                 Password: password
             });
-        }
-        //document.write("Register form has been submitted successfully.");
+        
+        // adding details in the app screen chat
+        localStorage.setItem("name", name);
+        localStorage.setItem("nickname", nickname);
+        localStorage.setItem("password", password);
 
-        // adding nickname in the app screen chat
-        //localStorage.setItem("name", nickname);
-        //localStorage.setItem("nickname", nickname);
-        //localStorage.setItem("password", password);
-
-
-        // adding photo in the app screen chat
-        //localStorage.setItem("photo", uploaded_image);
-        window.location.href = "ChatAfterRegister.cshtml";
+        window.location.href = "ChatAfterRegister";
     }
 }

@@ -43,7 +43,7 @@ function addIdentifier() {
     };
 
     if (!userExist) {
-        alert("user doesn't exist, please try another one");
+        alert("user doesn't exist, please try another one.");
     }
 
 

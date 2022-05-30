@@ -73,6 +73,12 @@ namespace webServerTask.Controllers
             return View();
         }
 
+        // GET: Users/ChatAfterRegister
+        public IActionResult ChatAfterRegister()
+        {
+            return View();
+        }
+
         // GET: Users/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

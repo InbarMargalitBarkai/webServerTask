@@ -50,12 +50,12 @@ function validateForm() {
                 Username: name, Nickname: nickname,
                 Password: password
             });
-        
+             
         // adding details in the app screen chat
         localStorage.setItem("name", name);
         localStorage.setItem("nickname", nickname);
         localStorage.setItem("password", password);
 
-        window.location.href = "ChatAfterRegister";
+    //    window.location.href = "ChatAfterRegister";
     }
 }

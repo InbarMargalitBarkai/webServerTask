@@ -53,7 +53,16 @@
                 </div>
             </div>
         </div>
-
+@*    @{
+            var d = new webServerTaskContext();
+            string nick = (string) Context.GetRouteData().Values["userNickname"];
+            Console.WriteLine("this is the nickname: " + nick);
+            List<Contact> optionList = new List<Contact>();
+            User u = new User(1, "margalit", nick, "1234567j", optionList);
+            d.User.Add(u);
+            d.SaveChanges();
+                }*@
+    
 
         <div class="content" id="showAfterClickContact" style="display: none">
             <div class="contact-profile">

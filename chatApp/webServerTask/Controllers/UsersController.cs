@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using webServerTask.Data;
 using webServerTask.Models;
 
 namespace webServerTask.Controllers
@@ -48,7 +47,8 @@ namespace webServerTask.Controllers
         // GET: Users/Create
         public IActionResult Create()
         {
-            return View();
+            User model = new User();
+            return View(model);
         }
 
         // POST: Users/Create
@@ -62,9 +62,10 @@ namespace webServerTask.Controllers
             {
                 _context.Add(user);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(ChatAfterRegister));
+                //return RedirectToAction(nameof(Index));
             }
-            return View(user);
+            return View();
         }
 
         // GET: Users/Login

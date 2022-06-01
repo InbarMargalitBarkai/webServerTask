@@ -1,36 +1,45 @@
-﻿@model webServerTask.Models.Contact
+﻿@model IEnumerable<webServerTask.Models.User>
 
-    public class ItemModel
-    {
-        // Add Item
-        public void addItem(Item item)
-        {
-            using (var db = new ItemsContext())
-            {
-                db.Add(item);
-                db.SaveChanges();
-            }
-        }
-
-        // Get Item
-        public Item? getItem(string itemName)
-        {
-            using (var db = new ItemsContext())
-            {
-                Item? item = db.Items.Find(itemName);
-                return item;
-            }
-        }
-
-        // Get all Items
-        public List<Item> getAllItems()
-        {
-            using (var db = new ItemsContext())
-            {
-                var items = db.Items.ToList();
-                return items;
-            }
-        }
-
-    }
+@{
+    ViewData["Title"] = "contacts";
 }
+
+<h1>contacts</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nickname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nickname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

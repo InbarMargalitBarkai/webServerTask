@@ -20,9 +20,12 @@ namespace webServerTask.Controllers
 
         // GET: api/contacts
         // return the contacts user
-        public IActionResult contacts()
+        public async Task<IActionResult> contacts()
         {
-            return View();
+            //return View();
+            return _context.User != null ?
+                          View(await _context.User.ToListAsync()) :
+                          Problem("Entity set 'webServerTaskContext.User'  is null.");
         }
 
         // Post: api/contacts

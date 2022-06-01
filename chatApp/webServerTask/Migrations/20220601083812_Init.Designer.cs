@@ -12,7 +12,7 @@ using webServerTask.Data;
 namespace webServerTask.Migrations
 {
     [DbContext(typeof(webServerTaskContext))]
-    [Migration("20220527110737_Init")]
+    [Migration("20220601083812_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

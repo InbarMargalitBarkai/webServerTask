@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -57,9 +58,42 @@ namespace webServerTask.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Username,Nickname,Password")] User user)
+        public async Task<object> Create([Bind("Id,Username,Nickname,Password,ConfirmPassword")] User user)
         {
-            if (ModelState.IsValid)
+            if (user.Username.Length == 0)
+            {
+                return View();
+            }
+            else if (user.Nickname.Length == 0)
+            {
+                return View();
+            }
+            else if (user.Password.Length == 0)
+            {
+                return View();
+            }
+            else if (user.ConfirmPassword.Length == 0)
+            {
+                return View();
+            }
+            else if (user.Password.Length < 8)
+            {
+                return View();
+
+            }
+            else if (Regex.Matches(user.Password, @"[a-zA-Z]").Count < 1)
+            {
+                return View();
+            }
+            else if (Regex.Matches(user.Password, @"[0-9]").Count < 1)
+            {
+                return View();
+            }
+            else if (!(user.Password.Equals(user.ConfirmPassword)))
+            {
+                return View();
+            }
+            else if (ModelState.IsValid)
             {
                 _context.Add(user);
                 await _context.SaveChangesAsync();

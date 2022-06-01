@@ -7,6 +7,8 @@
         public string Nickname { get; set; }
         public string Password { get; set; }
 
+        public string ConfirmPassword { get; set; }
+
         public List<Contact?>? Contacts { get; set; }
 
         //public User() { }

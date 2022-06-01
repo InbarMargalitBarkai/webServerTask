@@ -20,15 +20,17 @@ namespace webServerTask.Controllers
 
         // GET: api/contacts
         // return the contacts user
-        public async Task<IActionResult> contacts()
+        public IActionResult contacts()
         {
-            //return View();
-            return _context.User != null ?
-                          View(await _context.User.ToListAsync()) :
-                          Problem("Entity set 'webServerTaskContext.User'  is null.");
+            return View();
+            //return _context.User != null ?
+            //              View(await _context.User.ToListAsync()) :
+            //              Problem("Entity set 'webServerTaskContext.User'  is null.");
         }
 
         // Post: api/contacts
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> contacts(User? user)
         {
             var u = await _context.User.FirstOrDefaultAsync(e => e.Id == user.Id);

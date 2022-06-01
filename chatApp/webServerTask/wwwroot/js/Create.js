@@ -43,6 +43,7 @@ function validateForm() {
         // Checks that the Username is not used by another user
     } else if (checkUsername(contactsList, name)) {
         alert("Username already exists.")
+
         // If the user has registered successfully, 
         // update his details in the contacts list
     } else {
@@ -56,6 +57,5 @@ function validateForm() {
         localStorage.setItem("nickname", nickname);
         localStorage.setItem("password", password);
 
-    //    window.location.href = "ChatAfterRegister";
     }
 }

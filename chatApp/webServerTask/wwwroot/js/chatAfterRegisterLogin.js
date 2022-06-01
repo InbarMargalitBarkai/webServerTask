@@ -9,7 +9,7 @@ if (div1) {
 
 var div2 = document.getElementById("user");
 if (div2) {
-    div2.innerHTML = '&nbsp;&nbsp;' + localStorage.getItem("nick");
+    div2.innerHTML = '&nbsp;&nbsp;' + localStorage.getItem("n");
 }
 
 

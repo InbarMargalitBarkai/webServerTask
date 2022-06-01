@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using webServerTask.Data;
 using webServerTask.Models;
@@ -60,7 +55,14 @@ namespace webServerTask.Controllers
         [ValidateAntiForgeryToken]
         public async Task<object> Create([Bind("Id,Username,Nickname,Password,ConfirmPassword")] User user)
         {
-            if (user.Username.Length == 0)
+            // check if user already exist in database
+            if (_context.User.Any(m => m.Username == user.Username))
+            {
+                await Response.WriteAsync("<script>alert('User already exist. Please press enter on the url to re rgister');</script>");
+                // I dont know how to do it will come here after the alert, so I asked the user to press enter on the url
+                return View();
+            }
+            else if (user.Username.Length == 0)
             {
                 return View();
             }
@@ -106,6 +108,33 @@ namespace webServerTask.Controllers
         // GET: Users/Login
         public IActionResult Login()
         {
+            return View();
+        }
+
+        // POST: Users/Login
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<object> Login([Bind("Id,Username,Nickname,Password,ConfirmPassword")] User user)
+        {
+            if (!(_context.User.Any(m => m.Username == user.Username)))
+            {
+                await Response.WriteAsync("<script>alert('User doesnt exist. Please press enter on the url to re login');</script>");
+                // I dont know how to do it will come again after the alert, so I ask the user to do enter in the url
+            }
+            else
+            {
+                if (!(_context.User.Any(m => m.Password == user.Password)))
+                {
+                    await Response.WriteAsync("<script>alert('Password isnt correct. Please press enter on the url to re login');</script>");
+                }
+                // If the login is valid
+                else
+                {
+                    return RedirectToAction(nameof(ChatAfterLogin));
+
+                }
+            }
             return View();
         }
 

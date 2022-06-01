@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using webServerTask;
+using webServerTask.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<webServerTaskContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("webServerTaskContext") ?? throw new InvalidOperationException("Connection string 'webServerTaskContext' not found.")));

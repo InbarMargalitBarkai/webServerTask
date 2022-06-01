@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using webServerTask.Models;
 
-namespace webServerTask
+namespace webServerTask.Data
 {
     public class webServerTaskContext : DbContext
     {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using webServerTask.Data;
 using webServerTask.Models;
 
 namespace webServerTask.Controllers
